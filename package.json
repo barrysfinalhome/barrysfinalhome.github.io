@@ -1,0 +1,27 @@
+{
+  "name": "barrysfinalhome.github.io",
+  "version": "1.0.0",
+  "description": "init",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barrysfinalhome/barrysfinalhome.github.io.git"
+  },
+  "author": "zheng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/barrysfinalhome/barrysfinalhome.github.io/issues"
+  },
+  "homepage": "https://github.com/barrysfinalhome/barrysfinalhome.github.io",
+  "devDependencies": {
+    "connect-livereload": "*",
+    "grunt-open": "*",
+    "grunt-contrib-watch": "*",
+    "matchdep": "*",
+    "grunt": "*",
+    "grunt-contrib-connect": "*"
+  }
+}
