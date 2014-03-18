@@ -26,17 +26,16 @@ module.exports = function (grunt) {
       options: {
         port: cfg.serverPort,
         hostname: cfg.serverHost,
-        middleware: function(connect, options) {
-          return [
-            require('connect-livereload')({
-              port: cfg.livereload
-            }),
-            // Serve static files.
-            //数组会报错？
-            connect.static(options.base[0]),
-            // Make empty directories browsable.
-            // connect.directory(options.base),
-          ];
+        middleware: function(connect, options, middlewares) {
+          middlewares = [require('connect-livereload')({
+            port: cfg.livereload
+          })];
+          options.base.forEach(function(i){
+            middlewares.push(connect.static(i));
+          });
+          // Make empty directories browsable.
+          // connect.directory(options.base),
+          return middlewares;
         }
       },
       server: {
@@ -59,7 +58,7 @@ module.exports = function (grunt) {
         livereload: cfg.livereload,
       },
       server: {
-        files: [cfg.src + '**'],
+        files: [cfg.src + 'src/**'],
         // tasks: [''],
       },
     }
