@@ -58,7 +58,7 @@ module.exports = function (grunt) {
         livereload: cfg.livereload,
       },
       server: {
-        files: [cfg.src + 'src/**'],
+        files: [cfg.src + 'src/**', './lib/**'],
         // tasks: [''],
       },
     }
