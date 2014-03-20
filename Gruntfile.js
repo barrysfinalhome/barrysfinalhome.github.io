@@ -78,11 +78,10 @@ module.exports = function (grunt) {
 
     copy:{
       src: {
-        flatten: true,
         expand: true,
         cwd: './src',
-        src: ['./css', './*'],
-        dest: '../'
+        src: ['./css/**', './resource/**', './index.html'],
+        dest: './'
       }
     }
 
@@ -91,5 +90,5 @@ module.exports = function (grunt) {
   //dev
   grunt.registerTask('server', ['connect:server', 'open:server', 'watch:server']);
   //product
-  grunt.registerTask('publish', ['uglify:js', 'copy:src']);
+  grunt.registerTask('publish', ['copy:src', 'uglify:js']);
 };

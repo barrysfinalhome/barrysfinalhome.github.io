@@ -1,0 +1,18 @@
+@charset "utf-8";
+.start.header {
+  padding: 0px 0px 64px 0px;
+}
+
+.metro .page {
+  padding: 64px;
+}
+
+#userTile {
+  width: 30px;
+  height: 30px;
+  float: right;
+}
+
+.metro .bg-onenotePink {
+  background-color: #7e3878;
+}
