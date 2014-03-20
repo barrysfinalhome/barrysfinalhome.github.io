@@ -4,9 +4,6 @@ module.exports = function (grunt) {
   //load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-  //define tasks
-  grunt.registerTask('server', ['connect:server', 'open:server', 'watch:server']);
-
   //env cfg
   var pkg = grunt.file.readJSON('package.json');
   var cfg = {
@@ -61,6 +58,38 @@ module.exports = function (grunt) {
         files: [cfg.src + 'src/**', './lib/**'],
         // tasks: [''],
       },
+    },
+
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+          '<%= grunt.template.today("yyyy-mm-dd") %> */',
+        compress: true
+      },
+      js: {
+        files: [{
+          expand: true,
+          cwd: './src/js',
+          src: ['./**/*.js'],
+          dest: './js/'
+        }]
+      }
+    },
+
+    copy:{
+      src: {
+        flatten: true,
+        expand: true,
+        cwd: './src',
+        src: ['./css', './*'],
+        dest: '../'
+      }
     }
+
   });
+
+  //dev
+  grunt.registerTask('server', ['connect:server', 'open:server', 'watch:server']);
+  //product
+  grunt.registerTask('publish', ['uglify:js', 'copy:src']);
 };

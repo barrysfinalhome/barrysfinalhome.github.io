@@ -20,11 +20,24 @@
       </div>
     </div>
     <div class="body">
-      <div class="tile double bg-violet">
+      <a class="tile double double-vertical bg-steel" data-click="transform">
+        <div id="tile-weather" class="tile-content">
+          <div class="padding10">
+            <h1 class="fg-white ntm">--°</h1>
+            <h2 class="fg-white no-margin">Shanghai</h2>
+            <h5 class="fg-white no-margin"><img src="http://openweathermap.org/img/w/10d.png" /><span>----</span></h5>
+            <p class="tertiary-text fg-white">--°/--°</p>
+          </div>
+        </div>
+        <div class="tile-status">
+          <div class="label">Weather</div>
+        </div>
+      </a>
+      <div id="tile-calendar" class="tile bg-violet">
         <div class="tile-content">
-          <div class="text-right padding10 ntp">
-            <h1 class="fg-white no-margin">20</h1>
-            <p class="fg-white">Tur</p>
+          <div class="CalendarText text-right padding10 ntp">
+            <h1 class="fg-white no-margin">--</h1>
+            <p class="fg-white">---</p>
           </div>
           <div class="brand">
             <div class="label">
@@ -35,8 +48,12 @@
           </div>
         </div>
       </div>
-      <div class="tile"></div>
-      <div class="tile"></div>
+      <a class="tile bg-onenotePink" href="https://skydrive.live.com/redir?page=view&resid=4F181D294473059B!15947&authkey=!AGvNqIvU16keffc" data-click="transform">
+        <div class="tile-content icon"><img src="./resource/onenote.png" alt="onenote"></div>
+        <div class="tile-status">
+          <div class="label">OneNote</div>
+        </div>
+      </a>
       <div class="tile"></div>
       <div class="tile"></div>
       <div class="tile"></div>
@@ -47,8 +64,7 @@
   </div>
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="/lib/js/metro-core.js"></script>
-  <script type="text/javascript" src="/lib/js/metro-live-tile.js"></script>
+  <script type="text/javascript" src="/lib/js/metro.min.js"></script>
   <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

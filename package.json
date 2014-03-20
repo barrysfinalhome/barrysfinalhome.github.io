@@ -18,6 +18,8 @@
   "homepage": "https://github.com/barrysfinalhome/barrysfinalhome.github.io",
   "devDependencies": {
     "connect-livereload": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-copy": "*",
     "grunt-open": "*",
     "grunt-contrib-watch": "*",
     "matchdep": "*",
